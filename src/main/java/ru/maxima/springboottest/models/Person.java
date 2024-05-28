@@ -36,4 +36,7 @@ public class Person {
     @Min(value = 0, message = "Age should be min 0 years")
     @Column(name = "age")
     private Integer age;
+
+    @Column(name = "password")
+    private String password;
 }
