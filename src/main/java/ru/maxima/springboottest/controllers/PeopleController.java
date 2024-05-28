@@ -1,4 +1,4 @@
-package ru.maxima.controllers;
+package ru.maxima.springboottest.controllers;
 
 // Person - 1 человек
 // People - много людей
@@ -10,8 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import ru.maxima.PeopleService;
-import ru.maxima.models.Person;
+import ru.maxima.springboottest.models.*;
+import ru.maxima.springboottest.repositories.*;
+import ru.maxima.springboottest.service.*;
 
 import java.util.List;
 

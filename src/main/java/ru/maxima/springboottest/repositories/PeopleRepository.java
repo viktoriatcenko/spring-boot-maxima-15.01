@@ -1,9 +1,10 @@
-package ru.maxima.repositories;
+package ru.maxima.springboottest.repositories;
 
-import jakarta.validation.constraints.Min;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.maxima.models.Person;
+import ru.maxima.springboottest.models.*;
+import ru.maxima.springboottest.repositories.*;
+import ru.maxima.springboottest.service.*;
 
 import java.util.List;
 

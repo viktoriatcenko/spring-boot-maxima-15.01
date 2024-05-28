@@ -1,10 +1,11 @@
-package ru.maxima;
+package ru.maxima.springboottest.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.maxima.models.Person;
-import ru.maxima.repositories.PeopleRepository;
+import ru.maxima.springboottest.models.*;
+import ru.maxima.springboottest.repositories.*;
+import ru.maxima.springboottest.service.*;
 
 import java.util.List;
 import java.util.Optional;
