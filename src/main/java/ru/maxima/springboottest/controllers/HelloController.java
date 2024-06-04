@@ -2,6 +2,7 @@ package ru.maxima.springboottest.controllers;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -16,5 +17,11 @@ public class HelloController {
     public String hello() {
         log.info(welcome);
         return "hello";
+    }
+
+    @GetMapping("/admin")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    public String admin() {
+        return "admin";
     }
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+
+<form name="registrationForm" method="post" action="/auth/registration">
+  <label for="name">Tap your name</label>
+  <input type="text" name="name" id="name">
+  <br/>
+  <label for="email">Tap your email</label>
+  <input type="text" name="email" id="email">
+  <br/>
+  <label for="age">Tap your age</label>
+  <input type="text" name="age" id="age">
+  <br/>
+  <label for="password">Tap your password</label>
+  <input type="text" name="password" id="password">
+  <br/>
+  <input type="submit" value="Register">
+
+  <div th:if="${param.error}" style="color: red">
+    Incorrect name or age or email or password
+  </div>
+</form>
+
+
+</body>
+</html>

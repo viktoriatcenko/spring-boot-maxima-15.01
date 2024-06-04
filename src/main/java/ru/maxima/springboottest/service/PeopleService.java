@@ -2,10 +2,10 @@ package ru.maxima.springboottest.service;
 
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.maxima.springboottest.models.*;
 import ru.maxima.springboottest.repositories.*;
-import ru.maxima.springboottest.service.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,10 +14,12 @@ import java.util.Optional;
 public class PeopleService {
 
     private final PeopleRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public PeopleService(PeopleRepository repository) {
+    public PeopleService(PeopleRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Transactional
@@ -38,6 +40,12 @@ public class PeopleService {
 
     @Transactional
     public void save(Person person) {
+
+        String encodedPassword = passwordEncoder.encode(person.getPassword());
+        person.setRole("ROLE_USER");
+
+        person.setPassword(encodedPassword);
+
         repository.save(person);
     }
 

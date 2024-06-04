@@ -37,6 +37,10 @@ public class Person {
     @Column(name = "age")
     private Integer age;
 
+    @NotEmpty(message = "Password should not be empty")
     @Column(name = "password")
     private String password;
+
+    @Column(name = "role")
+    private String role;
 }
